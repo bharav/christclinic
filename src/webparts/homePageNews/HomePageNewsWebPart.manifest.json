@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "97957597-cc18-407e-b1ac-a9e073c1f964",
+  "alias": "HomePageNewsWebPart",
+  "componentType": "WebPart",
+  "version": "*", // The "*" signifies that the version should be taken from the package.json
+  "manifestVersion": 2,
+
+  /**
+   * This property should only be set to true if it is certain that the webpart does not
+   *  allow arbitrary scripts to be called
+   */
+  "safeWithCustomScriptDisabled": false,
+
+  "preconfiguredEntries": [{
+    "groupId": "97957597-cc18-407e-b1ac-a9e073c1f964",
+    "group": { "default": "Under Development" },
+    "title": { "default": "HomePageNews" },
+    "description": { "default": "Show News Carousal on HomePage" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "HomePageNews"
+    }
+  }]
+}

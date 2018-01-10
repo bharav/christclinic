@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/homePageNews/HomePageNewsWebPart.js",
+      "manifest": "./src/webparts/homePageNews/HomePageNewsWebPart.manifest.json",
+      "outputPath": "./dist/home-page-news.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "homePageNewsStrings": "webparts/homePageNews/loc/{locale}.js"
+  }
+}

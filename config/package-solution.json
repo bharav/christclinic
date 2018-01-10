@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "christclinic-intranet-client-side-solution",
+    "id": "edbdf670-aba2-4964-8050-764ebd013571",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/christclinic-intranet.sppkg"
+  }
+}

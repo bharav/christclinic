@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "christclinic-intranet",
+    "libraryId": "edbdf670-aba2-4964-8050-764ebd013571",
+    "environment": "spo"
+  }
+}
