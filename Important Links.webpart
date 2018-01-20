@@ -1,0 +1,168 @@
+﻿<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="Microsoft.SharePoint.Publishing.WebControls.SummaryLinkWebPart, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="InitialAsyncDataFetch" type="bool">False</property>
+        <property name="ChromeType" type="chrometype">TitleAndBorder</property>
+        <property name="HeaderXslLink" type="string" />
+        <property name="Height" type="string" />
+        <property name="CacheXslStorage" type="bool">True</property>
+        <property name="SummaryLinkStore" type="string">&lt;div title="_schemaversion" id="_3"&gt;
+  &lt;div title="_links"&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Patient Care&lt;/span&gt;
+      &lt;span title="_order"&gt;1&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;True&lt;/span&gt;
+      &lt;span title="_isgroupheader"&gt;True&lt;/span&gt;
+      &lt;span title="_groupstyle"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Primary Care&lt;/span&gt;
+      &lt;span title="_order"&gt;2&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;Patient Care&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;After Care&lt;/span&gt;
+      &lt;span title="_order"&gt;3&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;Patient Care&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;MA Teams&lt;/span&gt;
+      &lt;span title="_order"&gt;4&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_isgroupheader"&gt;True&lt;/span&gt;
+      &lt;span title="_groupstyle"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Front Office&lt;/span&gt;
+      &lt;span title="_order"&gt;5&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;MA Teams&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Patient Resources&lt;/span&gt;
+      &lt;span title="_order"&gt;6&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;MA Teams&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Community Actions&lt;/span&gt;
+      &lt;span title="_order"&gt;7&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;MA Teams&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Strategy Team&lt;/span&gt;
+      &lt;span title="_order"&gt;8&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;MA Teams&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div title="_link"&gt;
+      &lt;span title="_title"&gt;Mental Health&lt;/span&gt;
+      &lt;span title="_order"&gt;9&lt;/span&gt;
+      &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+      &lt;span title="_group"&gt;MA Teams&lt;/span&gt;
+      &lt;span title="_linkurl"&gt;
+        &lt;a href="#"&gt;#&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span title="_style"&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div title="_view"&gt;
+    &lt;span title="_columns"&gt;1&lt;/span&gt;
+    &lt;span title="_linkstyle"&gt;&lt;/span&gt;
+    &lt;span title="_groupstyle"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</property>
+        <property name="ListName" type="string">{9E38B91D-53A8-4997-BB84-F9367DB4B191}</property>
+        <property name="AllowZoneChange" type="bool">True</property>
+        <property name="AutoRefresh" type="bool">False</property>
+        <property name="XmlDefinitionLink" type="string" />
+        <property name="DataFields" type="string" />
+        <property name="NoDefaultStyle" type="string" null="true" />
+        <property name="XslLink" type="string" null="true" />
+        <property name="ViewFlag" type="string">0</property>
+        <property name="MainXslLink" type="string" />
+        <property name="CatalogIconImageUrl" type="string" />
+        <property name="AutoRefreshInterval" type="int">60</property>
+        <property name="AllowConnect" type="bool">True</property>
+        <property name="DataSourcesString" type="string" />
+        <property name="AllowClose" type="bool">True</property>
+        <property name="ShowWithSampleData" type="bool">False</property>
+        <property name="Xsl" type="string">&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" &gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/Header.xsl" /&gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/ItemStyle.xsl" /&gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/SummaryLinkMain.xsl" /&gt; &lt;/xsl:stylesheet&gt;</property>
+        <property name="EnableOriginalValue" type="bool">False</property>
+        <property name="Default" type="string" />
+        <property name="Hidden" type="bool">False</property>
+        <property name="ListUrl" type="string" null="true" />
+        <property name="DataSourceID" type="string" />
+        <property name="ParameterBindings" type="string" null="true" />
+        <property name="FireInitialRow" type="bool">True</property>
+        <property name="ManualRefresh" type="bool">False</property>
+        <property name="ViewFlags" type="Microsoft.SharePoint.SPViewFlags, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">None</property>
+        <property name="ChromeState" type="chromestate">Normal</property>
+        <property name="AllowHide" type="bool">True</property>
+        <property name="ListDisplayName" type="string" null="true" />
+        <property name="SampleData" type="string">&lt;dsQueryResponse&gt;
+                    &lt;Rows&gt;
+                        &lt;Row Title="Group Header" Order="1" BeginColumn="True" IsGroupHeader="True" /&gt;
+                        &lt;Row Title="Item 1" LinkUrl="http://Item1" Group="Group Header" Order="2" BeginColumn="False" IsGroupHeader="False" /&gt;
+                        &lt;Row Title="Item 2" LinkUrl="http://Item2" Group="Group Header" Order="3" BeginColumn="False" IsGroupHeader="False" /&gt;
+                        &lt;Row Title="Item 3" LinkUrl="http://Item3" Group="Group Header" Order="4" BeginColumn="False" IsGroupHeader="False" /&gt;
+                    &lt;/Rows&gt;
+                    &lt;/dsQueryResponse&gt;</property>
+        <property name="AsyncRefresh" type="bool">False</property>
+        <property name="Title" type="string">Important Links</property>
+        <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">9e38b91d-53a8-4997-bb84-f9367db4b191</property>
+        <property name="Description" type="string">Allows authors to create links that can be grouped and styled.</property>
+        <property name="AllowMinimize" type="bool">True</property>
+        <property name="TitleUrl" type="string" />
+        <property name="ItemXslLink" type="string" />
+        <property name="CacheXslTimeOut" type="int">86400</property>
+        <property name="DisplayName" type="string" />
+        <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
+        <property name="Width" type="string" />
+        <property name="AllowEdit" type="bool">True</property>
+        <property name="ExportMode" type="exportmode">All</property>
+        <property name="Direction" type="direction">NotSet</property>
+        <property name="PageSize" type="int">-1</property>
+        <property name="ViewContentTypeId" type="string" />
+        <property name="HelpUrl" type="string" />
+        <property name="XmlDefinition" type="string" />
+        <property name="UseSQLDataSourcePaging" type="bool">True</property>
+        <property name="TitleIconImageUrl" type="string" />
+        <property name="MissingAssembly" type="string">Cannot import this Web Part.</property>
+        <property name="HelpMode" type="helpmode">Modeless</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

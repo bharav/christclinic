@@ -62,19 +62,19 @@ class MockSearchDataProvider implements ISearchDataProvider {
                             RefinementCount: 2,
                             RefinementName: "Document",
                             RefinementToken: "ǂǂ446f63756d656e74",
-                            RefinementValue: "Document",
+                            RefinementValue: "Document",   
                         },
                         {
                             RefinementCount: 2,
                             RefinementName: "Video",
                             RefinementToken: "ǂǂ566964656f",
-                            RefinementValue: "Video",
+                            RefinementValue: "Video",                               
                         },
                         {
                             RefinementCount: 1,
                             RefinementName: "Form",
                             RefinementToken: "ǂǂ466f726d",
-                            RefinementValue: "Form",
+                            RefinementValue: "Form",                               
                         }
                     ]
                 },
@@ -85,13 +85,13 @@ class MockSearchDataProvider implements ISearchDataProvider {
                             RefinementCount: 2,
                             RefinementName: "Category 1",
                             RefinementToken: "ǂǂ45647563617465",
-                            RefinementValue: "Category 1",
+                            RefinementValue: "Category 1",   
                         },
                         {
                             RefinementCount: 2,
                             RefinementName: "Category 2",
                             RefinementToken: "ǂǂ416476697365",
-                            RefinementValue: "Category 2",
+                            RefinementValue: "Category 2",                               
                         },
                     ]
                 }

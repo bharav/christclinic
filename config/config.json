@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/homePageNews/HomePageNewsWebPart.js",
-      "manifest": "./src/webparts/homePageNews/HomePageNewsWebPart.manifest.json",
-      "outputPath": "./dist/home-page-news.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "home-page-news-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/homePageNews/HomePageNewsWebPart.js",
+          "manifest": "./src/webparts/homePageNews/HomePageNewsWebPart.manifest.json"
+        }
+      ]
     }
-  ],
-  "externals": {},
+  },
   "localizedResources": {
-    "homePageNewsStrings": "webparts/homePageNews/loc/{locale}.js"
-  }
+    "homePageNewsStrings": "lib/webparts/homePageNews/loc/{locale}.js"
+  },
+  "externals": {}
 }

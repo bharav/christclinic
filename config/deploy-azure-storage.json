@@ -1,6 +1,6 @@
 {
   "workingDir": "./temp/deploy/",
-  "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "christclinic-intranet",
-  "accessKey": "<!-- ACCESS KEY -->"
+  "account": "christclinicspfx",
+  "container": "christclinicspfxassests",
+  "accessKey": "9ThVuVDuyxkTwUD2ZEqUa3DqUNROZBjqbyHNxmAVH5kWQDgKpkA6rfWwTuWvIjyG+dvTX+v44VX3le8T0deNig=="
 }

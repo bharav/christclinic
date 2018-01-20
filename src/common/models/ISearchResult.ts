@@ -19,7 +19,7 @@ export interface IRefinementValue {
     RefinementName: string;
     RefinementToken: string;
     RefinementValue: string;
-} 
+}
 
 export interface IRefinementFilter {
     FilterName: string;
