@@ -1,82 +1,97 @@
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"> 
-<head>
-<title>People Item</title>
-
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
-<mso:MasterPageDescription msdt:dt="string">Displays a result tailored for a person.</mso:MasterPageDescription>
-<mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106603</mso:ContentTypeId>
-<mso:TargetControlType msdt:dt="string">;#SearchResults;#</mso:TargetControlType>
-<mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
-<mso:CrawlerXSLFile msdt:dt="string"></mso:CrawlerXSLFile>
-<mso:ManagedPropertyMapping msdt:dt="string">'AboutMe':'AboutMe','AccountName':'AccountName','BaseOfficeLocation':'BaseOfficeLocation','Department':'Department','HitHighlightedProperties':'HitHighlightedProperties','Interests':'Interests','JobTitle':'JobTitle','LastModifiedTime':'LastModifiedTime','Memberships':'Memberships','PastProjects':'PastProjects','Path':'Path','PictureURL':'PictureURL','PreferredName':'PreferredName','Responsibilities':'Responsibilities','Schools':'Schools','ServiceApplicationID':'ServiceApplicationID','SipAddress':'SipAddress','Skills':'Skills','UserProfile_GUID':'UserProfile_GUID','WorkEmail':'WorkEmail','WorkId':'WorkId','YomiDisplayName':'YomiDisplayName'</mso:ManagedPropertyMapping>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
-</head>
-<body>
+    <head>
+    <title>Team Member</title>
+    
+    <!--[if gte mso 9]><xml>
+    <mso:CustomDocumentProperties>
+    <mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
+    <mso:MasterPageDescription msdt:dt="string">Displays a result tailored for a person.</mso:MasterPageDescription>
+    <mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106603</mso:ContentTypeId>
+    <mso:TargetControlType msdt:dt="string">;#SearchResults;#Content Web Parts;#</mso:TargetControlType>
+    <mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+    <mso:CrawlerXSLFile msdt:dt="string"></mso:CrawlerXSLFile>
+    <mso:ManagedPropertyMapping msdt:dt="string">'AboutMe':'AboutMe','AccountName':'AccountName','BaseOfficeLocation':'BaseOfficeLocation','Department':'Department','HitHighlightedProperties':'HitHighlightedProperties','Interests':'Interests','JobTitle':'JobTitle','LastModifiedTime':'LastModifiedTime','Memberships':'Memberships','PastProjects':'PastProjects','Path':'Path','PictureURL':'PictureURL','PreferredName':'PreferredName','Responsibilities':'Responsibilities','Schools':'Schools','ServiceApplicationID':'ServiceApplicationID','SipAddress':'SipAddress','Skills':'Skills','UserProfile_GUID':'UserProfile_GUID','WorkEmail':'WorkEmail','WorkId':'WorkId','YomiDisplayName':'YomiDisplayName'</mso:ManagedPropertyMapping>
+    <mso:HtmlDesignStatusAndPreview msdt:dt="string">https://christclinickaty.sharepoint.com/sites/intranet/_catalogs/masterpage/Display Templates/Search/Item_team_member.html, Conversion successful.</mso:HtmlDesignStatusAndPreview>
+    <mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+    <mso:HtmlDesignPreviewUrl msdt:dt="string"></mso:HtmlDesignPreviewUrl>
+    </mso:CustomDocumentProperties>
+    </xml><![endif]-->
+    </head>
+    <body>
+    <!--#_ 
+                        if(!$isNull(ctx.CurrentItem) && !$isNull(ctx.ClientControl)){
+                            var id = ctx.ClientControl.get_nextUniqueId();
+                            var itemId = id + Srch.U.Ids.item;
+                            var hoverId = id + Srch.U.Ids.hover;
+                            $setResultItem(itemId, ctx.CurrentItem);
+                            var container_id = id + "_peopleContainer";
+                            var hhProps = Srch.U.createXMLDocument("<root>" + ctx.CurrentItem.HitHighlightedProperties + "</root>");
+                            var encodedPath = $urlHtmlEncodeString(ctx.CurrentItem.Path);
+                            var has_pn = !$isEmptyString(ctx.CurrentItem.PreferredName);
+                            var has_sip = !$isEmptyString(ctx.CurrentItem.SipAddress);
+                            var has_email = !$isEmptyString(ctx.CurrentItem.WorkEmail);
+                            var has_jt = !$isEmptyString(ctx.CurrentItem.JobTitle);
+                            var has_dp = !$isEmptyString(ctx.CurrentItem.Department);
+                            var has_abme = !$isEmptyString(ctx.CurrentItem.AboutMe);
+                            var has_resp = !$isEmptyString(ctx.CurrentItem.Responsibilities);
+                            var has_pp = !$isEmptyString(ctx.CurrentItem.PastProjects);
+                            var has_ski = !$isEmptyString(ctx.CurrentItem.Skills);
+                            var has_sch = !$isEmptyString(ctx.CurrentItem.Schools);
+                            var has_int = !$isEmptyString(ctx.CurrentItem.Interests);
+                            var has_vlm = !$isEmptyString(ctx.CurrentItem.ProfileViewsLastMonth);
+                            var has_vlw = !$isEmptyString(ctx.CurrentItem.ProfileViewsLastWeek);
+                            var has_query = !$isEmptyString(ctx.CurrentItem.ProfileQueriesFoundYou); 
+                            var isSelfSrch = (has_vlm == true || has_vlw == true || has_query == true);
+                            var delimiter = "";
+                            var userPersonaId = $htmlEncode(id) + "_peopleUserPersona";
+                            var uSip = ctx.CurrentItem.SipAddress;
+                            var uEmail = ctx.CurrentItem.WorkEmail;
+                            var uName = ctx.CurrentItem.PreferredName;
+                            var uPicUrl = ctx.CurrentItem.PictureURL;
+                            var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Person_HoverPanel.js";
+    _#-->
+   
+                            <div>
+                                <!--#_ 
+                                    var picUrl = ctx.CurrentItem.AccountName.substring(ctx.CurrentItem.AccountName.lastIndexOf('|')+1,ctx.CurrentItem.AccountName.length)
+                                    var imageUrl = _spPageContextInfo.siteAbsoluteUrl +"/_layouts/15/userphoto.aspx?size=M&accountname="+picUrl
+                                 _#-->
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 team-cards"> 
+                                        <div class="modal-content">
+                                            
+                                                <div class="modal-body">
+                                                    <center>
+                                                    <!--<img src="_#= $htmlEncode(ctx.CurrentItem.PictureURL) =#_" name="aboutme" width="100" height="100" border="0" class="img-circle">-->
+                                                    <img src="_#= imageUrl =#_" name="aboutme" width="100" height="100" border="0" class="img-circle">
+                                                    <h3 class="media-heading" title="_#= $htmlEncode(ctx.CurrentItem.PreferredName) =#_)">_#= $htmlEncode(ctx.CurrentItem.PreferredName) =#_</h3>
+                                                        <span class="label label-default">Focus area</span>
+                                                        <span class="label label-primary">Focus area</span>
+                                                        <span class="label label-success">Focus area</span>
+                                                        <span class="label label-info">Focus area</span>
+                                                        <span class="label label-warning">Focus area</span>
+                                                        <span class="label label-danger">Focus area</span>
+                                                    </center>
+                                                    <hr>
+                                                    <center>
+                                                    <p class="text-left"><strong>Title and brief summary :</strong><br>
+                                                        _#= ctx.CurrentItem.AboutMe =#_</p>
+                                                    <br>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <center>
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-phone fa-lg"></i> Contact Info</button>
+                                                     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-calendar-plus-o fa-lg"></i> My Calendar</button>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                </div>
+                        </div>
 <!--#_ 
-                    if(!$isNull(ctx.CurrentItem) && !$isNull(ctx.ClientControl)){
-                        var id = ctx.ClientControl.get_nextUniqueId();
-                        var itemId = id + Srch.U.Ids.item;
-                        var hoverId = id + Srch.U.Ids.hover;
-                        $setResultItem(itemId, ctx.CurrentItem);
-                        var container_id = id + "_peopleContainer";
-                        var hhProps = Srch.U.createXMLDocument("<root>" + ctx.CurrentItem.HitHighlightedProperties + "</root>");
-                        var encodedPath = $urlHtmlEncodeString(ctx.CurrentItem.Path);
-                        var has_pn = !$isEmptyString(ctx.CurrentItem.PreferredName);
-                        var has_sip = !$isEmptyString(ctx.CurrentItem.SipAddress);
-                        var has_email = !$isEmptyString(ctx.CurrentItem.WorkEmail);
-                        var has_jt = !$isEmptyString(ctx.CurrentItem.JobTitle);
-                        var has_dp = !$isEmptyString(ctx.CurrentItem.Department);
-                        var has_abme = !$isEmptyString(ctx.CurrentItem.AboutMe);
-                        var has_resp = !$isEmptyString(ctx.CurrentItem.Responsibilities);
-                        var has_pp = !$isEmptyString(ctx.CurrentItem.PastProjects);
-                        var has_ski = !$isEmptyString(ctx.CurrentItem.Skills);
-                        var has_sch = !$isEmptyString(ctx.CurrentItem.Schools);
-                        var has_int = !$isEmptyString(ctx.CurrentItem.Interests);
-                        var has_vlm = !$isEmptyString(ctx.CurrentItem.ProfileViewsLastMonth);
-                        var has_vlw = !$isEmptyString(ctx.CurrentItem.ProfileViewsLastWeek);
-                        var has_query = !$isEmptyString(ctx.CurrentItem.ProfileQueriesFoundYou); 
-                        var isSelfSrch = (has_vlm == true || has_vlw == true || has_query == true);
-                        var delimiter = "";
-                        var userPersonaId = $htmlEncode(id) + "_peopleUserPersona";
-                        var uSip = ctx.CurrentItem.SipAddress;
-                        var uEmail = ctx.CurrentItem.WorkEmail;
-                        var uName = ctx.CurrentItem.PreferredName;
-                        var uPicUrl = ctx.CurrentItem.PictureURL;
-                        var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Person_HoverPanel.js";
-_#-->
-						
-						<div class="col-sm-12"> 
-							<div class="modal-dialog" style="margin:15px;">
-								<div class="modal-content">
-									<div class="modal-body">
-										<center>
-										<img src="_#= $htmlEncode(ctx.CurrentItem.PictureURL) =#_" name="aboutme" width="140" height="140" border="0" class="img-circle">
-										<h3 class="media-heading">_#= $htmlEncode(ctx.CurrentItem.PreferredName) =#_</h3>
-										<span><strong>Focus Areas: </strong></span>
-											<span class="label label-warning">Focus area</span>
-											<span class="label label-info">Focus area</span>
-											<span class="label label-info">Focus area</span>
-											<span class="label label-success">Focus area</span>
-										</center>
-										<hr>
-										<center>
-										<p class="text-left"><strong>Title and brief summary </strong><br>
-											_#= $htmlEncode(ctx.CurrentItem.AboutMe) =#_</p>
-										<br>
-										</center>
-									</div>
-									<div class="modal-footer">
-										<center>
-										<button type="button" class="btn btn-default" data-dismiss="modal">Contact Info</button>
-										 <button type="button" class="btn btn-default" data-dismiss="modal">Link to my calendar</button>
-										</center>
-									</div>
-								</div>
-							</div>
-			</div>
-						
-</body>
-</html>
+             }
+_#-->          
+                        
+    </body>
+    </html>
+    
+    

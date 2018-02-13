@@ -1,17 +1,17 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+import * as React from "react";
+import * as ReactDom from "react-dom";
+import { Version } from "@microsoft/sp-core-library";
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneDropdown
-} from '@microsoft/sp-webpart-base';
+} from "@microsoft/sp-webpart-base";
 
-import * as strings from 'homePageNewsStrings';
-import HomePageNews from './components/HomePageNews';
-import { IHomePageNewsProps } from './components/IHomePageNewsProps';
-import { IHomePageNewsWebPartProps } from './IHomePageNewsWebPartProps';
+import * as strings from "homePageNewsStrings";
+import HomePageNews from "./components/HomePageNews";
+import { IHomePageNewsProps } from "./components/IHomePageNewsProps";
+import { IHomePageNewsWebPartProps } from "./IHomePageNewsWebPartProps";
 import NewsDataProvider from "./dataprovider/NewsDataProvider";
 import { Environment, EnvironmentType } from "@microsoft/sp-core-library";
 
@@ -39,7 +39,7 @@ export default class HomePageNewsWebPart extends BaseClientSideWebPart<IHomePage
   }
 
   protected get dataVersion(): Version {
-    return Version.parse('1.0');
+    return Version.parse("1.0");
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

@@ -15,7 +15,7 @@
 
   "preconfiguredEntries": [{
     "groupId": "97957597-cc18-407e-b1ac-a9e073c1f964",
-    "group": { "default": "Under Development" },
+    "group": { "default": "Christ Clinic WP" },
     "title": { "default": "HomePageNews" },
     "description": { "default": "Show News Carousal on HomePage" },
     "officeFabricIconFontName": "Page",

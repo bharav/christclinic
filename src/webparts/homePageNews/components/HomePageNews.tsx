@@ -23,7 +23,7 @@ export default class HomePageNews extends React.Component<IHomePageNewsProps, IH
   /*/*Sending the web part properties (top news API text,regional news API text,
     Count, View more link) to display the top news & regional news content to the page*/
     public componentDidMount(): void {
-      this.props.dataprovider.selectedProperties = `Title,PublishingPageImageOWSIMGEX,LastModifiedTime,ListItem`;
+      this.props.dataprovider.selectedProperties = `Title,PublishingPageImageOWSIMGEX,LastModifiedTime,ListItem,Path`;
       this.props.dataprovider.newSearchQueryText = this.props.newssearchquery;
       this.props.dataprovider.newsCount = this.props.newscount;
       this.props.dataprovider.getdataforCarousal().then((data:any[]) =>{

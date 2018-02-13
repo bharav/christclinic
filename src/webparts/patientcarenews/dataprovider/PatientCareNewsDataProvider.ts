@@ -7,22 +7,22 @@ import pnp, {
     SearchQueryBuilder, SearchResults, SearchResult, setup, Web, Sort, SortDirection
 } from "sp-pnp-js";
 import { ISearchResults, IRefinementFilter } from "../../../common/models/ISearchResult";
-import INewsDataProvider from "./INewsDataProvider";
+import IPatientCareNewsDataProvider from "./IPatientCareNewsDataProvider";
 
-class NewsDataProvider implements INewsDataProvider {
-    private _NewsSearchQueryText: string;
+class PatientCareNewsDataProvider implements IPatientCareNewsDataProvider {
+    private _searchQueryText: string;
     private _selectedProperties: string;
     private _commondataprovider: ISearchDataProvider;
-    private _carousalData: any[];
-    private _newscount: number;
-    public set carousalData(value: any[]) { this._carousalData = value; }
-    public get carousalData(): any[] { return this._carousalData; }
-    public set newSearchQueryText(value: string) { this._NewsSearchQueryText = value; }
-    public get newSearchQueryText(): string { return this._NewsSearchQueryText; }
+    private _data: any[];
+    private _count: number;
+    public set Data(value: any[]) { this._data = value; }
+    public get Data(): any[] { return this._data; }
+    public set searchQueryText(value: string) { this._searchQueryText = value; }
+    public get searchQueryText(): string { return this._searchQueryText; }
     public set selectedProperties(value: string) { this._selectedProperties = value; }
     public get selectedProperties(): string { return this._selectedProperties; }
-    public get newsCount(): number { return this._newscount; }
-    public set newsCount(value: number) { this._newscount = value; }
+    public get Count(): number { return this._count; }
+    public set Count(value: number) { this._count = value; }
     public constructor(webPartContext: IWebPartContext) {
         this._commondataprovider = new SharePointDataProvider(webPartContext);
     }
@@ -30,19 +30,19 @@ class NewsDataProvider implements INewsDataProvider {
     /**
      * Fetch Real data for Top Story Carousal
      */
-    public getdataforCarousal(): Promise<any[]> {
-        let newsdata: SearchResult[];
+    public getdataforNews(): Promise<any[]> {
+        let data: SearchResult[];
         let searchRefinement: IRefinementFilter[] = [];
         let sort: Sort[];
         sort = [{
             Property: "LastModifiedTime",
             Direction: SortDirection.Descending
         }];
-        this._commondataprovider.resultsCount = this.newsCount;
+        this._commondataprovider.resultsCount = this._count;
         this._commondataprovider.selectedProperties = this._selectedProperties.split(",");
-        return this._commondataprovider.search(this._NewsSearchQueryText).then((searchresults: ISearchResults) => {
-            this.carousalData = this.formatresultasneeded(searchresults);
-                return this.carousalData;
+        return this._commondataprovider.search(this.searchQueryText).then((searchresults: ISearchResults) => {
+            this.Data = this.formatresultasneeded(searchresults);
+                return this.Data;
             });
     }
 
@@ -52,20 +52,16 @@ class NewsDataProvider implements INewsDataProvider {
     private formatresultasneeded(newsdatas: ISearchResults):any[] {
         var _localdata: any = [];
         if (newsdatas !== null) {
-            newsdatas.RelevantResults.forEach((newsdata, index) => {
-                if (_localdata.length < this.newsCount) {
+            newsdatas.RelevantResults.forEach((data, index) => {
                     _localdata.push({
-                        "original": newsdata.PublishingPageImageOWSIMGEX.split("src")[1].substr(2).split('"')[0],
-                        "thumbnail": newsdata.PublishingPageImageOWSIMGEX.split("src")[1].substr(2).split('"')[0],
-                        "thumbnailLabel": newsdata.Title.length>50? newsdata.Title.substr(0,50)+"...":newsdata.Title,
-                        "path":newsdata.Path
+                        "title":data.title,
+                        "path":data.path
                     });
-                }
             });
         }
         return _localdata;
     }
 }
 
-export default NewsDataProvider;
+export default PatientCareNewsDataProvider;
 

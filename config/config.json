@@ -9,10 +9,55 @@
           "manifest": "./src/webparts/homePageNews/HomePageNewsWebPart.manifest.json"
         }
       ]
+    },
+    "patientcarereports-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/patientcarereports/PatientcarereportsWebPart.js",
+          "manifest": "./src/webparts/patientcarereports/PatientcarereportsWebPart.manifest.json"
+        }
+      ]
+    },
+    "servicesprogram-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/servicesprogram/ServicesprogramWebPart.js",
+          "manifest": "./src/webparts/servicesprogram/ServicesprogramWebPart.manifest.json"
+        }
+      ]
+    },
+    "patientcarefeatured-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/patientcarefeatured/PatientcarefeaturedWebPart.js",
+          "manifest": "./src/webparts/patientcarefeatured/PatientcarefeaturedWebPart.manifest.json"
+        }
+      ]
+    },
+    "patientcarenews-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/patientcarenews/PatientcarenewsWebPart.js",
+          "manifest": "./src/webparts/patientcarenews/PatientcarenewsWebPart.manifest.json"
+        }
+      ]
+    },
+    "patientstory-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/patientstory/PatientstoryWebPart.js",
+          "manifest": "./src/webparts/patientstory/PatientstoryWebPart.manifest.json"
+        }
+      ]
     }
   },
   "localizedResources": {
-    "homePageNewsStrings": "lib/webparts/homePageNews/loc/{locale}.js"
+    "homePageNewsStrings": "lib/webparts/homePageNews/loc/{locale}.js",
+    "PatientcarereportsWebPartStrings": "lib/webparts/patientcarereports/loc/{locale}.js",
+    "ServicesprogramWebPartStrings": "lib/webparts/servicesprogram/loc/{locale}.js",
+    "PatientcarefeaturedWebPartStrings": "lib/webparts/patientcarefeatured/loc/{locale}.js",
+    "PatientcarenewsWebPartStrings": "lib/webparts/patientcarenews/loc/{locale}.js",
+    "PatientstoryWebPartStrings": "lib/webparts/patientstory/loc/{locale}.js"
   },
   "externals": {}
 }
