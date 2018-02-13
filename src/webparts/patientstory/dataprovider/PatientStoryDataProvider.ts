@@ -53,7 +53,7 @@ class PatientStoryDataProvider implements IPatientStoryDataProvider {
             newsdatas.RelevantResults.forEach((data, index) => {
                     _localdata.push({
                         "original": data.PublishingPageImageOWSIMGEX.split("src")[1].substr(2).split('"')[0],
-                        "description": data.Title.length>50? data.Title.substr(0,50)+"...":data.Title,
+                        "description": data.Title.length>50? data.Title.substr(0,300)+"...":data.Title,
                         "path":data.Path
                     });
             });

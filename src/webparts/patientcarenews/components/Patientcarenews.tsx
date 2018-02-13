@@ -30,13 +30,13 @@ export default class Patientcarenews extends React.Component<IPatientcarenewsPro
     }
   public render(): React.ReactElement<IPatientcarenewsProps> {
     return (
-      <div className={ styles.patientcarenews }>
+      <div className="patientcarenews">
        {this.state.data.map((news,index)=> {
-          return(<div>
+          return(<div className="newslistitem">
             <a href={news.path}>{news.title}</a>
           </div>);
         })
-      };
+      }
       </div>
     );
   }

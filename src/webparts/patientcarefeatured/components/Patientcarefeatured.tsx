@@ -4,6 +4,7 @@ import { IPatientcarefeaturedProps } from "./IPatientcarefeaturedProps";
 import { escape } from "@microsoft/sp-lodash-subset";
 import IFeaturedDataProvider from "../dataprovider/IFeaturedDataProvider";
 import ImageGallery from "react-image-gallery";
+import "../../../../node_modules/react-image-gallery/build/image-gallery.css";
 export interface IPatientcarefeaturedState {
   FeaturedData: any[];
   currentDataIndex:number;

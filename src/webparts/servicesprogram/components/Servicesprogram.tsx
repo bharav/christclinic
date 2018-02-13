@@ -38,7 +38,7 @@ export default class Servicesprogram extends React.Component<IServicesprogramPro
             <p>{service.description}</p>
           </div>);
         })
-      };
+      }
       </div>
     );
   }

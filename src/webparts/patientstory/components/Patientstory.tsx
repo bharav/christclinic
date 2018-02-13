@@ -30,7 +30,7 @@ export default class Patientstory extends React.Component<IPatientstoryProps, IP
     }
   public render(): React.ReactElement<IPatientstoryProps> {
     const patientstory:JSX.Element = Object.keys(this.state.data).length===0?<div>No records</div>:
-    <div><img src={this.state.data.original}/>
+    <div className="patientstory"><img src={this.state.data.original}/>
     <a href={this.state.data.path}>{this.state.data.description}</a></div>;
     return (
       <div className={ styles.patientstory }>
