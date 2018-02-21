@@ -218,23 +218,34 @@ export default class Patientcarereports extends React.Component<IPatientcarerepo
     const chart:JSX.Element=this.state.type==="bar"?<Bar data={this.state.data} />:<Line data={this.state.data} />;
     return (
         <div>
-              <select className="form-control" id="reportType" onChange={e => this.selecthandler(e)} value={this.state.graphType}>
-                    <option value="">Select</option>
-                    <option value="patientvisit">Patient Visit</option>
-                    <option value="patientcontribution">Patient Contribution</option>
-                    <option value="cycletime">Cycle Time</option>
-                    <option value="noshowrate">No Show Rate</option>
-                    <option value="preventativeservice">Preventative Service</option>
-                    <option value="specialitycare">Speciality Care</option>
-                    <option value="thirdnextavailable">Third Next Available</option>
-              </select>
-              <span>Select Year</span>
-              <select value={this.state.year} onChange={e => this.changeyear(e)}>
-                <option>Select</option>
-                <option value={this._currentyear}>{this._currentyear}</option>
-                <option value={this._currentyear-1}>{this._currentyear-1}</option>
-                <option value={this._currentyear-2}>{this._currentyear-2}</option>
-              </select>
+          <form className="form-horizontal" role="form">
+              <div>
+                  <label className="col-sm-2 control-label">Select Report : </label>
+                  <div className="col-sm-4">
+                  <select className="form-control" id="reportType" onChange={e => this.selecthandler(e)} value={this.state.graphType}>
+                          <option value="">Select</option>
+                          <option value="patientvisit">Patient Visit</option>
+                          <option value="patientcontribution">Patient Contribution</option>
+                          <option value="cycletime">Cycle Time</option>
+                          <option value="noshowrate">No Show Rate</option>
+                          <option value="preventativeservice">Preventative Service</option>
+                          <option value="specialitycare">Speciality Care</option>
+                          <option value="thirdnextavailable">Third Next Available</option>
+                    </select>
+                  </div>
+              </div>
+              <div>
+                  <label className="col-sm-2 control-label">Select Year : </label>
+                  <div className="col-sm-4">
+                  <select className="form-control" value={this.state.year} onChange={e => this.changeyear(e)}>
+                      <option>Select</option>
+                      <option value={this._currentyear}>{this._currentyear}</option>
+                      <option value={this._currentyear-1}>{this._currentyear-1}</option>
+                      <option value={this._currentyear-2}>{this._currentyear-2}</option>
+                    </select>
+                  </div>
+              </div>
+          </form>
               <div>
                   <h1>{this.state.title} For the Year {this.state.year}</h1>
                   {chart}

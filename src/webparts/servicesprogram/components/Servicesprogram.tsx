@@ -31,7 +31,7 @@ export default class Servicesprogram extends React.Component<IServicesprogramPro
     }
   public render(): React.ReactElement<IServicesprogramProps> {
     return (
-      <div className={ styles.servicesprogram }>
+      <div className={ styles.servicesprogram }><h4>Services and Program</h4>
        {this.state.data.map((service,index)=> {
           return(<div>
             <label>{service.title}</label>
@@ -39,6 +39,14 @@ export default class Servicesprogram extends React.Component<IServicesprogramPro
           </div>);
         })
       }
+                                        <ul className="pagination pagination-sm">
+                                                  <li><a href="#">1</a></li>
+                                                  <li><a href="#">2</a></li>
+                                                  <li><a href="#">3</a></li>
+                                                  <li><a href="#">4</a></li>
+                                                  <li><a href="#">5</a></li>
+                                                </ul>
+
       </div>
     );
   }

@@ -15,8 +15,8 @@
 
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
-    "group": { "default": "Other" },
-    "title": { "default": "patientstory" },
+    "group": { "default": "Christ Clinic WP" },
+    "title": { "default": "Patient Story" },
     "description": { "default": "patientstory description" },
     "officeFabricIconFontName": "Page",
     "properties": {
