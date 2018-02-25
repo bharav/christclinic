@@ -7,9 +7,9 @@ import pnp, {
     SearchQueryBuilder, SearchResults, SearchResult, setup, Web, Sort, SortDirection
 } from "sp-pnp-js";
 import { ISearchResults, IRefinementFilter } from "../../../common/models/ISearchResult";
-import IPatientStoryDataProvider from "./IPatientStoryDataProvider";
+import ICCImageGalleryDataProvider from "./ICCImageGalleryDataProvider";
 
-class PatientStoryDataProvider implements IPatientStoryDataProvider {
+class CCImageGalleryDataProvider implements ICCImageGalleryDataProvider {
     private _searchQueryText: string;
     private _selectedProperties: string;
     private _commondataprovider: ISearchDataProvider;
@@ -27,7 +27,7 @@ class PatientStoryDataProvider implements IPatientStoryDataProvider {
     /**
      * Fetch Real data for Top Story Carousal
      */
-    public getdataforPatientStory(): Promise<any> {
+    public getdataforImageGallery(): Promise<any> {
         let data: SearchResult[];
         let searchRefinement: IRefinementFilter[] = [];
         let sort: Sort[];
@@ -51,9 +51,7 @@ class PatientStoryDataProvider implements IPatientStoryDataProvider {
         if (newsdatas !== null) {
             newsdatas.RelevantResults.forEach((data, index) => {
                     _localdata.push({
-                        "original": data.PublishingPageImageOWSIMGEX.split("src")[1].substr(2).split('"')[0],
-                        "description": data.Title.length>50? data.Title.substr(0,300)+"...":data.Title,
-                        "path":data.Path
+                        "original": data.PictureURL
                     });
             });
         }
@@ -61,5 +59,5 @@ class PatientStoryDataProvider implements IPatientStoryDataProvider {
     }
 }
 
-export default PatientStoryDataProvider;
+export default CCImageGalleryDataProvider;
 

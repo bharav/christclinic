@@ -49,6 +49,14 @@
           "manifest": "./src/webparts/patientstory/PatientstoryWebPart.manifest.json"
         }
       ]
+    },
+    "christ-clinic-image-gallery-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/christclinicimageGallery/ChristClinicImageGalleryWebPart.js",
+          "manifest": "./src/webparts/christclinicimageGallery/ChristClinicImageGalleryWebPart.manifest.json"
+        }
+      ]
     }
   },
   "localizedResources": {
@@ -57,7 +65,8 @@
     "ServicesprogramWebPartStrings": "lib/webparts/servicesprogram/loc/{locale}.js",
     "PatientcarefeaturedWebPartStrings": "lib/webparts/patientcarefeatured/loc/{locale}.js",
     "PatientcarenewsWebPartStrings": "lib/webparts/patientcarenews/loc/{locale}.js",
-    "PatientstoryWebPartStrings": "lib/webparts/patientstory/loc/{locale}.js"
+    "PatientstoryWebPartStrings": "lib/webparts/patientstory/loc/{locale}.js",
+    "ChristClinicImageGalleryWebPartStrings": "lib/webparts/christclinicimageGallery/loc/{locale}.js"
   },
   "externals": {}
 }

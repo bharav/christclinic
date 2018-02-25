@@ -50,7 +50,6 @@ class FeaturedDataProvider implements IFeaturedDataProvider {
      * Formatting Real data for Top Story Carousal
      */
     private formatresultasneeded(featureddata: ISearchResults):any[] {
-        debugger;
         var _localdata: any = [];
         if (featureddata !== null) {
             featureddata.RelevantResults.forEach((data, index) => {

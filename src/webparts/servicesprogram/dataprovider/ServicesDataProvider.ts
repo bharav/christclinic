@@ -50,7 +50,6 @@ class ServicesDataProvider implements IServicesDataProvider {
      * Formatting Real data for Top Story Carousal
      */
     private formatresultasneeded(newsdatas: ISearchResults):any[] {
-        debugger;
         var _localdata: any = [];
         if (newsdatas !== null) {
             newsdatas.RelevantResults.forEach((data, index) => {

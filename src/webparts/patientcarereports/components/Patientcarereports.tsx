@@ -207,7 +207,6 @@ export default class Patientcarereports extends React.Component<IPatientcarerepo
   }
   public componentDidMount():void{
     let patientvisits:PatientsVisits = new PatientsVisits();
-    debugger;
       patientvisits.getPatientVisits(this.state.year,this.state.ismonthly,this.state.startmonth,this.state.startyear,this.state.endmonth,this.state.endyear).then((data:any)=> {
         this.setState({
           data:data
@@ -255,14 +254,6 @@ export default class Patientcarereports extends React.Component<IPatientcarerepo
                 <label className="col-sm-2 control-label"> To: </label>
                 <MonthYear disabled={!this.state.ismonthly} selectedMonth={this.state.endmonth} selectedYear={this.state.endyear} onChange={this.endmonthyear} />
               </div>
-            <div>
-            <label className="col-sm-2 control-label">From : </label>
-                  <div className="col-sm-4">
-                  
-                    
-                  </div>
-                  
-            </div>
           </form>
               <div>
                   <h1>{this.state.title} For the Year {this.state.year}</h1>
