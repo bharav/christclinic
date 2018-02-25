@@ -9,17 +9,52 @@ class NoShowRate {
   private _data:any={};
 
 
-  public getNoShowRate(year:string):Promise<any> {
-    return axios.get("https://christclinickaty.sharepoint.com/sites/"+
-     "intranet/patientcare/_api/web/lists/getbytitle('NoShowMonthly')/items?$filter=Year eq "+year).then((result)=> {
+  public getNoShowRate(year:string,ismonthly:boolean,startmonth:string,startyear:string,endmonth:string,endyear:string):Promise<any> {
+    let query:string="";
+    if(ismonthly){
+      query="https://christclinickaty.sharepoint.com/sites/intranet/patientcare/_api/web/lists/getbytitle('NoShowMonthly')/items?$filter=(Year eq "+startyear+" or Year eq "+endyear+")";
+    }
+    else{
+      query="https://christclinickaty.sharepoint.com/sites/"+
+      "intranet/patientcare/_api/web/lists/getbytitle('NoShowMonthly')/items?$filter=Year eq "+year;
+    }
+    return axios.get(query).then((result)=> {
+
        if(result.data.value.length>0){
-       for(let index:number = 0;index<result.data.value.length;index++){
-         this._label.push(result.data.value[index].Month);
-         this._new.push(result.data.value[index].New);
-         this._established.push(result.data.value[index].Established);
-         this._aftercare.push(result.data.value[index].After_x0020_Care_x0020_F_x002f_U);
-         this._goal.push(result.data.value[index].Goal);
-         this._total.push(result.data.value[index].Total);
+        for(let index:number = 0;index<result.data.value.length;index++){
+          if(ismonthly){
+            if(startyear === endyear)
+            {
+              if(result.data.value[index].InternalMonth>=parseInt(startmonth) && result.data.value[index].InternalMonth<=parseInt(endmonth)){
+                this._label.push(result.data.value[index].Month);
+                this._new.push(result.data.value[index].New);
+                this._established.push(result.data.value[index].Established);
+                this._aftercare.push(result.data.value[index].After_x0020_Care_x0020_F_x002f_U);
+                this._goal.push(result.data.value[index].Goal);
+                this._total.push(result.data.value[index].Total);
+              }
+            }
+            else{
+              if((result.data.value[index].InternalMonth>=parseInt(startmonth) && parseInt(result.data.value[index].Year)==parseInt(startyear)) ||
+                (result.data.value[index].InternalMonth <= parseInt(endmonth) && parseInt(result.data.value[index].Year)==parseInt(endyear))){
+                  this._label.push(result.data.value[index].Month);
+                  this._new.push(result.data.value[index].New);
+                  this._established.push(result.data.value[index].Established);
+                  this._aftercare.push(result.data.value[index].After_x0020_Care_x0020_F_x002f_U);
+                  this._goal.push(result.data.value[index].Goal);
+                  this._total.push(result.data.value[index].Total);
+            }
+        }
+        }
+       else{
+        this._label.push(result.data.value[index].Month);
+        this._new.push(result.data.value[index].New);
+        this._established.push(result.data.value[index].Established);
+        this._aftercare.push(result.data.value[index].After_x0020_Care_x0020_F_x002f_U);
+        this._goal.push(result.data.value[index].Goal);
+        this._total.push(result.data.value[index].Total);
+       }
+           
        }
     this._data= {
         labels: this._label,

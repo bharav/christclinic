@@ -19,6 +19,7 @@
     "lodash-es": "^4.17.5",
     "react": "15.6.2",
     "react-chartjs-2": "^2.7.0",
+    "react-date-picker": "^6.8.1",
     "react-dom": "15.6.2",
     "react-image-gallery": "^0.8.7",
     "sp-pnp-js": "^3.0.4"

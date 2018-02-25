@@ -5,15 +5,42 @@ class PatientsContribution {
   private _labs:any[]=[];
   private _data:any={};
 
-       public getPatientContribution(year:string):Promise<any> {
-        return axios.get("https://christclinickaty.sharepoint.com/sites/"+
-         "intranet/patientcare/_api/web/lists/getbytitle('PatientContributionMonthly')/items?$filter=Year eq "+year).then((result)=> {
+  public getPatientContribution(year:string,ismonthly:boolean,startmonth:string,startyear:string,endmonth:string,endyear:string):Promise<any> {
+        let query:string="";
+        if(ismonthly){
+          query="https://christclinickaty.sharepoint.com/sites/intranet/patientcare/_api/web/lists/getbytitle('PatientContributionMonthly')/items?$filter=(Year eq "+startyear+" or Year eq "+endyear+")";
+        }
+        else{
+          query="https://christclinickaty.sharepoint.com/sites/"+
+          "intranet/patientcare/_api/web/lists/getbytitle('PatientContributionMonthly')/items?$filter=Year eq "+year;
+        }
+        return axios.get(query).then((result)=> {
            if(result.data.value.length>0){
            for(let index:number = 0;index<result.data.value.length;index++){
+            if(ismonthly){
+              if(startyear === endyear)
+              {
+                if(result.data.value[index].InternalMonth>=parseInt(startmonth) && result.data.value[index].InternalMonth<=parseInt(endmonth)){
+                  this._label.push(result.data.value[index].Months);
+                  this._visits.push(result.data.value[index].Visits);
+                  this._labs.push(result.data.value[index].Labs);
+              }
+            }
+              else{
+                if((result.data.value[index].InternalMonth>=parseInt(startmonth) && parseInt(result.data.value[index].Year)==parseInt(startyear)) ||
+                  (result.data.value[index].InternalMonth <= parseInt(endmonth) && parseInt(result.data.value[index].Year)==parseInt(endyear))){
+                    this._label.push(result.data.value[index].Months);
+                    this._visits.push(result.data.value[index].Visits);
+                    this._labs.push(result.data.value[index].Labs);
+              }
+          }
+          }
+         else{
              this._label.push(result.data.value[index].Months);
              this._visits.push(result.data.value[index].Visits);
              this._labs.push(result.data.value[index].Labs);
            }
+          }
            this._data =  {
             labels: this._label,
             datasets: [
@@ -60,7 +87,7 @@ class PatientsContribution {
                 ]
             };
            }
-          return this._data;
+            return this._data;
          });
       }
 }

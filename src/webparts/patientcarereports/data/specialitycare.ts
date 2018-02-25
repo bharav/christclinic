@@ -10,11 +10,47 @@ class SpecialityCare {
   private _hepitatiscscreening:any[]=[];
   private _data:any={};
 
-       public getSpecialityCare(year:string):Promise<any> {
-        return axios.get("https://christclinickaty.sharepoint.com/sites/"+
-         "intranet/patientcare/_api/web/lists/getbytitle('PreventativeServicesMonthly')/items?$filter=Year eq "+year).then((result)=> {
+       public getSpecialityCare(year:string,ismonthly:boolean,startmonth:string,startyear:string,endmonth:string,endyear:string):Promise<any> {
+        let query:string="";
+        if(ismonthly){
+          query="https://christclinickaty.sharepoint.com/sites/intranet/patientcare/_api/web/lists/getbytitle('PreventativeServicesMonthly')/items?$filter=(Year eq "+startyear+" or Year eq "+endyear+")";
+        }
+        else{
+          query="https://christclinickaty.sharepoint.com/sites/"+
+          "intranet/patientcare/_api/web/lists/getbytitle('PreventativeServicesMonthly')/items?$filter=Year eq "+year;
+        }
+        return axios.get(query).then((result)=> {
            if(result.data.value.length>0){
            for(let index:number = 0;index<result.data.value.length;index++){
+            if(ismonthly){
+              if(startyear === endyear)
+              {
+                if(result.data.value[index].InternalMonth>=parseInt(startmonth) && result.data.value[index].InternalMonth<=parseInt(endmonth)){
+                  this._label.push(result.data.value[index].Month);
+                  this._mentalhealh.push(result.data.value[index].MentalHealth);
+                  this._podiatry.push(result.data.value[index].Podiatry);
+                  this._onsitecolposcopy.push(result.data.value[index].OnsiteColposcopy);
+                  this._offsitecolposcopy.push(result.data.value[index].OffSiteColposcopy);
+                  this._minorprocedures.push(result.data.value[index].MinorProcedures);
+                  this._handsurgeryprocedures.push(result.data.value[index].HandSurgeryProcedures);
+                  this._hepitatiscscreening.push(result.data.value[index].HepitatisCScreening);
+              }
+            }
+              else{
+                if((result.data.value[index].InternalMonth>=parseInt(startmonth) && parseInt(result.data.value[index].Year)==parseInt(startyear)) ||
+                  (result.data.value[index].InternalMonth <= parseInt(endmonth) && parseInt(result.data.value[index].Year)==parseInt(endyear))){
+                    this._label.push(result.data.value[index].Month);
+                    this._mentalhealh.push(result.data.value[index].MentalHealth);
+                    this._podiatry.push(result.data.value[index].Podiatry);
+                    this._onsitecolposcopy.push(result.data.value[index].OnsiteColposcopy);
+                    this._offsitecolposcopy.push(result.data.value[index].OffSiteColposcopy);
+                    this._minorprocedures.push(result.data.value[index].MinorProcedures);
+                    this._handsurgeryprocedures.push(result.data.value[index].HandSurgeryProcedures);
+                    this._hepitatiscscreening.push(result.data.value[index].HepitatisCScreening);
+              }
+          }
+          }
+         else{
              this._label.push(result.data.value[index].Month);
              this._mentalhealh.push(result.data.value[index].MentalHealth);
              this._podiatry.push(result.data.value[index].Podiatry);
@@ -23,6 +59,7 @@ class SpecialityCare {
              this._minorprocedures.push(result.data.value[index].MinorProcedures);
              this._handsurgeryprocedures.push(result.data.value[index].HandSurgeryProcedures);
              this._hepitatiscscreening.push(result.data.value[index].HepitatisCScreening);
+         }
            }
            this._data = {
         labels: this._label,
