@@ -4,6 +4,7 @@ import { ICCImageGalleryProps } from './ICCImageGalleryProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import ImageGallery  from "react-image-gallery";
 import ICCImageGalleryDataProvider from "../data/ICCImageGalleryDataProvider";
+import "../../../../node_modules/react-image-gallery/build/image-gallery.css";
 export interface ICCImageGalleryState {
   CarousalData: any[];
 }
@@ -20,7 +21,6 @@ export default class CCImageGallery extends React.Component<ICCImageGalleryProps
   /*/*Sending the web part properties (top news API text,regional news API text,
     Count, View more link) to display the top news & regional news content to the page*/
     public componentDidMount(): void {
-      debugger;
       this.props.dataprovider.selectedProperties = `Title,PictureURL,Path`;
       this.props.dataprovider.searchQueryText = this.props.searchQuery;
       this.props.dataprovider.getdataforImageGallery().then((data:any[]) =>{
@@ -39,15 +39,19 @@ export default class CCImageGallery extends React.Component<ICCImageGalleryProps
     }
   public render(): React.ReactElement<ICCImageGalleryProps> {
     return (
-      <div>
-        <div >
+      <div  className="ccimagelibrary" >
+        <div>
           <ImageGallery           
           items={this.state.CarousalData}
           slideInterval={2000}
-          autoPlay={false}
+          autoPlay={true}
           showPlayButton={false}
-          showFullscreenButton={true}/>
+          showThumbnails={false}
+          showFullscreenButton={false}
+          showBullets={false}
+          />
         </div>
+        <div><a className="ccimglibuploadbtn" href={this.props.uploadurl}>Upload Image</a></div>
     </div>
     );
   }

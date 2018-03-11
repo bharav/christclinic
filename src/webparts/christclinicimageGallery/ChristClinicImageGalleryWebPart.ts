@@ -15,6 +15,7 @@ import { Environment, EnvironmentType } from "@microsoft/sp-core-library";
 
 export interface IChristClinicImageGalleryWebPartProps {
   searchQuery:string;
+  uploadurl:string;
 }
 
 export default class ChristClinicImageGalleryWebPart extends BaseClientSideWebPart<IChristClinicImageGalleryWebPartProps> {
@@ -30,7 +31,8 @@ export default class ChristClinicImageGalleryWebPart extends BaseClientSideWebPa
       ImageGallery,
       {
         dataprovider:this._dataProvider,
-        searchQuery:this.properties.searchQuery
+        searchQuery:this.properties.searchQuery,
+        uploadurl:this.properties.uploadurl
       }
     );
 
@@ -55,6 +57,9 @@ export default class ChristClinicImageGalleryWebPart extends BaseClientSideWebPa
                 PropertyPaneTextField("searchQuery", {
                   label: strings.SearchQueryFieldName
                 }),
+                PropertyPaneTextField("uploadurl", {
+                  label: strings.UploadUrlFieldName
+                })
               ]
             }
           ]

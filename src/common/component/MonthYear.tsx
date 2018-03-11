@@ -31,7 +31,7 @@ export default class MonthYear extends React.Component<IMonthYearProps,IMonthYea
     public render():React.ReactElement<IMonthYearProps>{
         return(
             <div>
-                <select disabled={this.props.disabled}  className="form-control" value={this.state.selectedMonth} onChange={e => this.changemonth(e)}>
+               <div  className="col-sm-12 col-sm6 col-md-6 col-lg-6"> <select disabled={this.props.disabled}  className="form-control" value={this.state.selectedMonth} onChange={e => this.changemonth(e)}>
                       <option>Select</option>
                       <option value="1">January</option>
                       <option value="2">February</option>
@@ -46,13 +46,15 @@ export default class MonthYear extends React.Component<IMonthYearProps,IMonthYea
                       <option value="11">November</option>
                       <option value="12">December</option>
                     </select>
-
+                   </div>
+                   <div  className="col-sm-12 col-sm6 col-md-6 col-lg-6">
                     <select disabled={this.props.disabled} className="form-control" value={this.state.selectedYear} onChange={e => this.changeyear(e)}>
                       <option>Select</option>
                       <option value={this._currentyear}>{this._currentyear}</option>
                       <option value={this._currentyear-1}>{this._currentyear-1}</option>
                       <option value={this._currentyear-2}>{this._currentyear-2}</option>
                     </select>
+                    </div>
             </div>
         );
     }

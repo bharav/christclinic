@@ -218,12 +218,12 @@ export default class Patientcarereports extends React.Component<IPatientcarerepo
     return (
         <div>
           <form className="form-horizontal" role="form">
-        <label><input type="radio" name="ismonthly" checked={this.state.ismonthly===true} onChange={e=>this.isMonthly(e)}/>Monthwise</label>
-        <label><input type="radio" name="ismonthly" checked={this.state.ismonthly===false} onChange={e=>this.isYearly(e)}/> YearWise</label>
-          <div>
-            <div>
-                  <label className="col-sm-2 control-label">Select Report : </label>
-                  <div className="col-sm-4">
+        <label className="patientreportradio"><input type="radio" name="ismonthly" checked={this.state.ismonthly===true} onChange={e=>this.isMonthly(e)}/> Monthwise </label>
+        <label className="patientreportradio"><input type="radio" name="ismonthly" checked={this.state.ismonthly===false} onChange={e=>this.isYearly(e)}/> Yearwise </label>
+          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div className="row"> <div className="col-sm-12 col-sm6 col-md-6 col-lg-6">
+                  <label className="col-sm-4 control-label">Select Report : </label>
+                  <div className="col-sm-8">
                   <select disabled={this.state.ismonthly} className="form-control" id="reportType" onChange={e => this.selecthandler(e)} value={this.state.graphType}>
                           <option value="">Select</option>
                           <option value="patientvisit">Patient Visit</option>
@@ -235,10 +235,10 @@ export default class Patientcarereports extends React.Component<IPatientcarerepo
                           <option value="thirdnextavailable">Third Next Available</option>
                     </select>
                   </div>
-              </div>
-              <div>
-                  <label className="col-sm-2 control-label">Select Year : </label>
-                  <div className="col-sm-4">
+                  </div>
+                   <div className="col-sm-12 col-sm6 col-md-6 col-lg-6">
+                  <label className="col-sm-4 control-label">Select Year : </label>
+                  <div className="col-sm-8">
                   <select disabled={this.state.ismonthly} className="form-control" value={this.state.year} onChange={e => this.changeyear(e)}>
                       <option>Select</option>
                       <option value={this._currentyear}>{this._currentyear}</option>
@@ -247,12 +247,15 @@ export default class Patientcarereports extends React.Component<IPatientcarerepo
                     </select>
                   </div>
               </div>
-              <div>
-                <label className="col-sm-2 control-label">From : </label>
-                <MonthYear disabled={!this.state.ismonthly} selectedMonth={this.state.startmonth} selectedYear={this.state.startyear} onChange={this.startmonthyear} />
+              </div>
+              <div className="row"> <div  className="col-sm-12 col-sm6 col-md-6 col-lg-6">
+                <label className="col-sm-4 control-label">From : </label>
+                <div className="col-sm-8"> <MonthYear disabled={!this.state.ismonthly} selectedMonth={this.state.startmonth} selectedYear={this.state.startyear} onChange={this.startmonthyear} /></div>
                 </div>
-                <label className="col-sm-2 control-label"> To: </label>
-                <MonthYear disabled={!this.state.ismonthly} selectedMonth={this.state.endmonth} selectedYear={this.state.endyear} onChange={this.endmonthyear} />
+                <div  className="col-sm-12 col-sm6 col-md-6 col-lg-6">
+                <label className="col-sm-4 control-label"> To: </label>
+                <div className="col-sm-8"> <MonthYear disabled={!this.state.ismonthly} selectedMonth={this.state.endmonth} selectedYear={this.state.endyear} onChange={this.endmonthyear} /></div>
+              </div></div>
               </div>
           </form>
               <div>

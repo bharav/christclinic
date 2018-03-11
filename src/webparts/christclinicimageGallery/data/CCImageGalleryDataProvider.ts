@@ -35,7 +35,7 @@ class CCImageGalleryDataProvider implements ICCImageGalleryDataProvider {
             Property: "LastModifiedTime",
             Direction: SortDirection.Descending
         }];
-        this._commondataprovider.resultsCount = 1;
+        this._commondataprovider.resultsCount = 10;
         this._commondataprovider.selectedProperties = this._selectedProperties.split(",");
         return this._commondataprovider.search(this.searchQueryText).then((searchresults: ISearchResults) => {
             this.Data = this.formatresultasneeded(searchresults);
@@ -46,16 +46,16 @@ class CCImageGalleryDataProvider implements ICCImageGalleryDataProvider {
     /**
      * Formatting Real data for Top Story Carousal
      */
-    private formatresultasneeded(newsdatas: ISearchResults):any {
+    private formatresultasneeded(newsdatas: ISearchResults):any[] {
         var _localdata: any = [];
         if (newsdatas !== null) {
             newsdatas.RelevantResults.forEach((data, index) => {
                     _localdata.push({
-                        "original": data.PictureURL
+                        "original": data.PictureURL+"?width=580"
                     });
             });
         }
-        return _localdata.length>0?_localdata[0]:{};
+        return _localdata;
     }
 }
 

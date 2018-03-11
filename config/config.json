@@ -57,6 +57,14 @@
           "manifest": "./src/webparts/christclinicimageGallery/ChristClinicImageGalleryWebPart.manifest.json"
         }
       ]
+    },
+    "fundingpiechart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/fundingpiechart/FundingpiechartWebPart.js",
+          "manifest": "./src/webparts/fundingpiechart/FundingpiechartWebPart.manifest.json"
+        }
+      ]
     }
   },
   "localizedResources": {
@@ -66,7 +74,8 @@
     "PatientcarefeaturedWebPartStrings": "lib/webparts/patientcarefeatured/loc/{locale}.js",
     "PatientcarenewsWebPartStrings": "lib/webparts/patientcarenews/loc/{locale}.js",
     "PatientstoryWebPartStrings": "lib/webparts/patientstory/loc/{locale}.js",
-    "ChristClinicImageGalleryWebPartStrings": "lib/webparts/christclinicimageGallery/loc/{locale}.js"
+    "ChristClinicImageGalleryWebPartStrings": "lib/webparts/christclinicimageGallery/loc/{locale}.js",
+    "FundingpiechartWebPartStrings": "lib/webparts/fundingpiechart/loc/{locale}.js"
   },
   "externals": {}
 }
