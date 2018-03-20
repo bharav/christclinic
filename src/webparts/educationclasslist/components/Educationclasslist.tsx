@@ -57,10 +57,10 @@ export default class Educationclasslist extends React.Component<IEducationclassl
                     <div>
                       {
                         this.state.educationlist.map((edulist,index)=> {
-                          return(<div>
+                          return(<div className={styles.items}>
                             <label>{edulist.Title}</label>
-                            <p>Description: {edulist.Description}</p>
-                           <p>Location: {edulist.Location}</p>
+                            <p><label>Description:</label> {edulist.Description}</p>
+                           <p><label>Location:</label> {edulist.Location}</p>
                           </div>);
                       })
                       }
