@@ -1,6 +1,13 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
 .educationclasslist {
+  select{
+    width:30%;
+    margin-bottom: 10px;
+  }
+  .items{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;}
   .container {
     max-width: 700px;
     margin: 0px auto;
