@@ -32,8 +32,8 @@ export default class EducationInstructorList extends React.Component<IEducationI
       <div className={ styles.educationInstructorList }>
       {
         this.props.listName!=="" && this.props.listName!==undefined?
-        <ul className="list-WP-img">{this.state.instructerlist.map((instructer,key)=>{
-          return(<li><img src={instructer.Picture.Url+"?width=90"} />
+        <ul className={styles.listWP_ul}>{this.state.instructerlist.map((instructer,key)=>{
+          return(<li><img src={instructer.Picture.Url} />
           <p>{instructer.Title}</p>
           <span>{instructer.AboutProvider.length>150?instructer.AboutProvider.substring(0, 150)+"...":instructer.AboutProvider}</span></li>);
         })}</ul>:<span>Please set the list name</span>
