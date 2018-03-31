@@ -81,6 +81,22 @@
           "manifest": "./src/webparts/educationInstructorList/EducationInstructorListWebPart.manifest.json"
         }
       ]
+    },
+    "accept-or-reject-event-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/acceptOrRejectEvent/AcceptOrRejectEventWebPart.js",
+          "manifest": "./src/webparts/acceptOrRejectEvent/AcceptOrRejectEventWebPart.manifest.json"
+        }
+      ]
+    },
+    "edu-provider-accept-reject-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/eduProviderAcceptReject/EduProviderAcceptRejectWebPart.js",
+          "manifest": "./src/webparts/eduProviderAcceptReject/EduProviderAcceptRejectWebPart.manifest.json"
+        }
+      ]
     }
   },
   "localizedResources": {
@@ -93,7 +109,9 @@
     "ChristClinicImageGalleryWebPartStrings": "lib/webparts/christclinicimageGallery/loc/{locale}.js",
     "FundingpiechartWebPartStrings": "lib/webparts/fundingpiechart/loc/{locale}.js",
     "EducationclasslistWebPartStrings": "lib/webparts/educationclasslist/loc/{locale}.js",
-    "EducationInstructorListWebPartStrings": "lib/webparts/educationInstructorList/loc/{locale}.js"
+    "EducationInstructorListWebPartStrings": "lib/webparts/educationInstructorList/loc/{locale}.js",
+    "AcceptOrRejectEventWebPartStrings": "lib/webparts/acceptOrRejectEvent/loc/{locale}.js",
+    "EduProviderAcceptRejectWebPartStrings": "lib/webparts/eduProviderAcceptReject/loc/{locale}.js"
   },
   "externals": {}
 }

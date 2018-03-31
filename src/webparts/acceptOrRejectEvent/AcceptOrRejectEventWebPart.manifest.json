@@ -1,7 +1,7 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "33dd0604-9491-40b5-9b4b-37eba26a6016",
-  "alias": "EducationInstructorListWebPart",
+  "id": "08ebde27-ef53-4444-8ab5-ede9e8ab185f",
+  "alias": "AcceptOrRejectEventWebPart",
   "componentType": "WebPart",
 
   // The "*" signifies that the version should be taken from the package.json
@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Christ Clinic WP" },
-    "title": { "default": "educationInstructorList" },
-    "description": { "default": "educationInstructorList description" },
+    "title": { "default": "AcceptOrRejectEvent" },
+    "description": { "default": "Accept or Reject event" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "educationInstructorList"
+      "description": "AcceptOrRejectEvent"
     }
   }]
 }
