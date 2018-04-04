@@ -97,6 +97,14 @@
           "manifest": "./src/webparts/eduProviderAcceptReject/EduProviderAcceptRejectWebPart.manifest.json"
         }
       ]
+    },
+    "ca-voting-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/caVoting/CaVotingWebPart.js",
+          "manifest": "./src/webparts/caVoting/CaVotingWebPart.manifest.json"
+        }
+      ]
     }
   },
   "localizedResources": {
@@ -111,7 +119,8 @@
     "EducationclasslistWebPartStrings": "lib/webparts/educationclasslist/loc/{locale}.js",
     "EducationInstructorListWebPartStrings": "lib/webparts/educationInstructorList/loc/{locale}.js",
     "AcceptOrRejectEventWebPartStrings": "lib/webparts/acceptOrRejectEvent/loc/{locale}.js",
-    "EduProviderAcceptRejectWebPartStrings": "lib/webparts/eduProviderAcceptReject/loc/{locale}.js"
+    "EduProviderAcceptRejectWebPartStrings": "lib/webparts/eduProviderAcceptReject/loc/{locale}.js",
+    "CaVotingWebPartStrings": "lib/webparts/caVoting/loc/{locale}.js"
   },
   "externals": {}
 }
