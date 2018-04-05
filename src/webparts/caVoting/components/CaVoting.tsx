@@ -178,9 +178,9 @@ export default class CaVoting extends React.Component<ICaVotingProps, ICaVotingS
       <div className={ styles.caVoting }>
         {this.state.showspinner?<Spinner/>:
         this.state.showmessage ? <p>this.state.message</p>:
-        this.state.showoptions?<div><h3>{this.state.pollquestion}</h3>{this.state.optionsId.map((option,index)=>{
-          return(<label><input type="radio" name={this.state.options[index]} 
-          value={option} checked={this.state.optionchoosen===option} onChange={e=>this.choosevotingitem(e)}/>{this.state.options[index]}</label>)
+        this.state.showoptions?<div class="voting_div"><h4>{this.state.pollquestion}</h4>{this.state.optionsId.map((option,index)=>{
+          return(<p><input type="radio" name={this.state.options[index]} 
+          value={option} checked={this.state.optionchoosen===option} onChange={e=>this.choosevotingitem(e)}/>{this.state.options[index]}</p>)
         })}<br/><button onClick={this.castvote}>Vote</button></div>:
         this.state.showgraph?<Pie data={this.state.graphdata} />:<p>Unexpected Error Occured</p>}
       </div>
