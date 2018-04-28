@@ -105,6 +105,22 @@
           "manifest": "./src/webparts/caVoting/CaVotingWebPart.manifest.json"
         }
       ]
+    },
+    "specialist-request-chart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/specialistRequestChart/SpecialistRequestChartWebPart.js",
+          "manifest": "./src/webparts/specialistRequestChart/SpecialistRequestChartWebPart.manifest.json"
+        }
+      ]
+    },
+    "patientscommittee-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/patientscommittee/PatientscommitteeWebPart.js",
+          "manifest": "./src/webparts/patientscommittee/PatientscommitteeWebPart.manifest.json"
+        }
+      ]
     }
   },
   "localizedResources": {
@@ -120,7 +136,9 @@
     "EducationInstructorListWebPartStrings": "lib/webparts/educationInstructorList/loc/{locale}.js",
     "AcceptOrRejectEventWebPartStrings": "lib/webparts/acceptOrRejectEvent/loc/{locale}.js",
     "EduProviderAcceptRejectWebPartStrings": "lib/webparts/eduProviderAcceptReject/loc/{locale}.js",
-    "CaVotingWebPartStrings": "lib/webparts/caVoting/loc/{locale}.js"
+    "CaVotingWebPartStrings": "lib/webparts/caVoting/loc/{locale}.js",
+    "SpecialistRequestChartWebPartStrings": "lib/webparts/specialistRequestChart/loc/{locale}.js",
+    "PatientscommitteeWebPartStrings": "lib/webparts/patientscommittee/loc/{locale}.js"
   },
   "externals": {}
 }
