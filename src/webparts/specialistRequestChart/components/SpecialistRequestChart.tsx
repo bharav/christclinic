@@ -19,7 +19,7 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
     this.state = {
       title:"",
       specialitydata: null,
-      error:"Unexpected error occurred please contact your admin",
+      error:"loading...",
       showgraph:false
     };
    
@@ -37,7 +37,7 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
         this._dataProvider.getdata(firstDay,lastDay).then((data:any) => {
           this.setState({
             specialitydata : data,
-            title:"Speciality for the month of " + currentDate.getMonth(),
+            title:"Speciality for the month of " + currentDate.toLocaleString("en", { month: "long" }) ,
             showgraph:true
           });
         });
@@ -59,7 +59,7 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
         this._dataProvider.getdata(firstDay,lastDay).then((data:any) => {
           this.setState({
             specialitydata : data,
-            title:"Speciality for the month of " + currentDate.getMonth(),
+            title:"Speciality for the month of " + currentDate.toLocaleString("en", { month: "long" }),
             showgraph:true
           });
         });
