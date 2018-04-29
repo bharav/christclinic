@@ -46,7 +46,7 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
         this.setState({
           error:"Please set the list title",
           showgraph:false
-        })
+        });
       }
     }
 
@@ -68,7 +68,7 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
         this.setState({
           error:"Please set the list title",
           showgraph:false
-        })
+        });
       }
     }
 

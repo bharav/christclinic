@@ -72,7 +72,7 @@ export default class CaVoting extends React.Component<ICaVotingProps, ICaVotingS
                         alreadyVoted=true;
                       }
                   });
-                };
+                }
               });
               if(alreadyVoted){
                 let mapdata:any;
@@ -121,7 +121,7 @@ export default class CaVoting extends React.Component<ICaVotingProps, ICaVotingS
         }
       }
 
-    })
+    });
   }
 
   private choosevotingitem=(e: React.FormEvent<HTMLInputElement>):void=>{
@@ -180,7 +180,7 @@ export default class CaVoting extends React.Component<ICaVotingProps, ICaVotingS
         this.state.showmessage ? <p>this.state.message</p>:
         this.state.showoptions?<div className="voting_div"><h4>{this.state.pollquestion}</h4>{this.state.optionsId.map((option,index)=>{
           return(<p><input type="radio" name={this.state.options[index]} 
-          value={option} checked={this.state.optionchoosen===option} onChange={e=>this.choosevotingitem(e)}/>{this.state.options[index]}</p>)
+          value={option} checked={this.state.optionchoosen===option} onChange={e=>this.choosevotingitem(e)}/>{this.state.options[index]}</p>);
         })}<br/><button onClick={this.castvote}>Vote</button></div>:
         this.state.showgraph?<Pie data={this.state.graphdata} />:<p>Unexpected Error Occured</p>}
       </div>

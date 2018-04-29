@@ -50,7 +50,7 @@ export default class Patientscommittee extends React.Component<IPatientscommitte
            <div className='member-pics'>
             <img src={item.Image.Url}/>
             <p>{item.Biography}</p>
-           </div>)
+           </div>);
          })}
        </div>:<div><p>Please provide advisory committee list name</p></div>}
      </div>
