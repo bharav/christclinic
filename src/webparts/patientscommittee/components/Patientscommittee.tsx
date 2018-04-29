@@ -47,8 +47,9 @@ export default class Patientscommittee extends React.Component<IPatientscommitte
        {this.state.data!==null?<div>
          {this.state.data.map((item,key)=>{
            return (
-           <div className='member-pics'>
+           <div className='member-pics col-xs-6'>
             <img src={item.Image.Url}/>
+            <strong>Name of the person</strong>
             <p>{item.Biography}</p>
            </div>);
          })}
