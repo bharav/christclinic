@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './SpecialistRequestChart.module.scss';
 import { ISpecialistRequestChartProps } from './ISpecialistRequestChartProps';
 import { escape } from '@microsoft/sp-lodash-subset';
-import {Doughnut,Pie} from "react-chartjs-2";
+import {Doughnut,Pie, Bar} from "react-chartjs-2";
 import SpecialistRequestData from "../data/SpecialistRequestData";
 import ISpecialistRequestData from "../data/ISpecialistRequestData";
 export interface ISpecialistRequestChartState {
@@ -28,7 +28,6 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
   /*/*Sending the web part properties (top news API text,regional news API text,
     Count, View more link) to display the top news & regional news content to the page*/
     public componentDidMount(): void {
-      debugger;
       if(this.props.listName !== ''){
         this._dataProvider = new SpecialistRequestData(this.props.context,this.props.listName);
         let currentDate:Date = new Date();
@@ -77,8 +76,9 @@ export default class SpecialistRequestChart extends React.Component<ISpecialistR
      <div>
        {this.state.showgraph?<div>
          <p>{this.state.title}</p>
-         <Pie data={this.state.specialitydata} />
+         <Bar data={this.state.specialitydata} />
        </div>:<div><p>{this.state.error}</p></div>}
+       <a className="btn" href="/sites/intranet/Lists/Specialty%20Request%20Form/NewForm.aspx?Source=https://christclinickaty.sharepoint.com/sites/intranet/Pages/Referral.aspx&RootFolder="> Submit a Speciality Request</a>​<br/>
      </div>
     );
   }

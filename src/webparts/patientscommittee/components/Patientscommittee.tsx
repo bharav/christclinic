@@ -49,7 +49,7 @@ export default class Patientscommittee extends React.Component<IPatientscommitte
            return (
            <div className='member-pics col-xs-6'>
             <img src={item.Image.Url}/>
-            <strong>Name of the person</strong>
+            <strong>{item.Title}</strong>
             <p>{item.Biography}</p>
            </div>);
          })}

@@ -121,14 +121,6 @@
           "manifest": "./src/webparts/patientscommittee/PatientscommitteeWebPart.manifest.json"
         }
       ]
-    },
-    "patient-quote-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/patientQuote/PatientQuoteWebPart.js",
-          "manifest": "./src/webparts/patientQuote/PatientQuoteWebPart.manifest.json"
-        }
-      ]
     }
   },
   "localizedResources": {
@@ -146,8 +138,7 @@
     "EduProviderAcceptRejectWebPartStrings": "lib/webparts/eduProviderAcceptReject/loc/{locale}.js",
     "CaVotingWebPartStrings": "lib/webparts/caVoting/loc/{locale}.js",
     "SpecialistRequestChartWebPartStrings": "lib/webparts/specialistRequestChart/loc/{locale}.js",
-    "PatientscommitteeWebPartStrings": "lib/webparts/patientscommittee/loc/{locale}.js",
-    "PatientQuoteWebPartStrings": "lib/webparts/patientQuote/loc/{locale}.js"
+    "PatientscommitteeWebPartStrings": "lib/webparts/patientscommittee/loc/{locale}.js"
   },
   "externals": {}
 }

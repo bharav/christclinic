@@ -53,9 +53,14 @@ class SpecialistRequestData implements ISpecialistRequestData {
         });
         const chartdata = {
             labels:this._label,
-            legend: {
-                position: 'bottom'
-              },
+            options: {
+                legend: {
+                  display: false,
+                    labels: {
+                      display: false
+                    }
+                }
+              } ,
             datasets: [{
                 data: this._data,
                 backgroundColor:this._bkcolor
